@@ -18,6 +18,7 @@ jobs:
       image: epitechcontent/epitest-docker
     steps:
     - run: mkdir -p log
+    - run: tree
     - id: run_tests
       run: make tests_run > log/coverage_outputs
     - id: run_coverage
