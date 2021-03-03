@@ -19,15 +19,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: mkdir -p log
-    - run: tree
-    - run: pwd
     - id: run_tests
       run: make tests_run > log/coverage_outputs
     - id: run_coverage
       run: make coverage  > log/coverage_outputs
     - run: cat log/coverage_outputs
-
     - uses: actions/upload-artifact@v2
+      continue-on-error: true
       with:
         name: coverage_outputs
         path: log/coverage_outputs
