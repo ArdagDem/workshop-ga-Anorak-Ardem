@@ -17,14 +17,14 @@ jobs:
     container:
       image: epitechcontent/epitest-docker
     steps:
+    - uses: actions/checkout@v2
     - run: mkdir -p log
     - run: tree
+    - run: pwd
     - id: run_tests
       run: make tests_run > log/coverage_outputs
     - id: run_coverage
       run: make coverage  > log/coverage_outputs
-
-    - uses: actions/checkout@v2
 
     - uses: actions/upload-artifact@v2
       with:
