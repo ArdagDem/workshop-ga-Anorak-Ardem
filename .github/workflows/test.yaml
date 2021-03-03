@@ -34,9 +34,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
+    - run: mkdir -p log
     - id: functional-tests
-      run: ./functional-test.sh
-    - run: touch log/function-tests_outputs
+      run: ./functional-test.sh > log/function-tests
     - uses: actions/upload-artifact@v2
       continue-on-error: true
       with:
