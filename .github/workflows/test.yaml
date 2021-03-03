@@ -17,7 +17,13 @@ jobs:
     runs-on: ubuntu-20.04
     container: epitechcontent/epitest-docker
     steps:
+      run: mkdir -p log
     - id: run_tests
-      run: make tests_run
+      run: make tests_run > log/coverage_outputs
     - id: run_coverage
-      run: make coverage
+      run: make coverage  > log/coverage_outputs
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: log/coverage_outputs
+
