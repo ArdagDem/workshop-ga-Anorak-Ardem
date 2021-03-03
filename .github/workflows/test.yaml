@@ -6,7 +6,6 @@ on:
       - master
       - dev
 
-
 jobs:
   hello-world:
     runs-on: ubuntu-20.04
@@ -15,7 +14,8 @@ jobs:
       run: echo Welcome to the Github Actions workshop !
   unit-test:
     runs-on: ubuntu-20.04
-    container: epitechcontent/epitest-docker
+    container:
+      image: epitechcontent/epitest-docker
     steps:
     - run: mkdir -p log
     - id: run_tests
