@@ -11,5 +11,5 @@ jobs:
   hello-world:
     runs-on: ubuntu-20.04
     steps:
-    - id: say hello-world:
+    - id: Say hello world
       run: echo Welcome to the Github Actions workshop !
