@@ -40,6 +40,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       continue-on-error: true
       with:
-        name: coverage_outputs
+        name: function-tests_outputs
         path: log/function-tests_outputs
 
