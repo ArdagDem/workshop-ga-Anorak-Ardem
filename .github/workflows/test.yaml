@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: functional-tests
-       run: ./functional-test.sh > log/function-tests_outputs
+      run: ./functional-test.sh > log/function-tests_outputs
     - uses: actions/upload-artifact@v2
       continue-on-error: true
       with:
