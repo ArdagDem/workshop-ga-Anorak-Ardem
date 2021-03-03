@@ -36,7 +36,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: mkdir -p log
     - id: functional-tests
-      run: ./functional-test.sh > log/function-tests
+      run: ./functional-test.sh > log/function-tests_outputs
     - uses: actions/upload-artifact@v2
       continue-on-error: true
       with:
