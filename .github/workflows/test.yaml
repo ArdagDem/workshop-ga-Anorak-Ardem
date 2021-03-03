@@ -13,3 +13,10 @@ jobs:
     steps:
     - id: Say_hello_world
       run: echo Welcome to the Github Actions workshop !
+  unit-test:
+    container: epitechcontent/epitest-docker
+    steps:
+    - id: run_tests
+      run: make tests_run
+    - id: run_coverage
+      run: make coverage
